@@ -1,6 +1,6 @@
 /**
 *  ConsoleView.h
-*  Purpose: represents the interface between the user and the game board
+*  Purpose: represents the interface between the user and the game board.
 *  Features:
 *  - Displays the main menu, the game board, info and error messages as well as end game stats on the console
 *  - Gets input from user in all interfaces
@@ -9,7 +9,7 @@
 *  - Handles console text colours
 *
 *  @author Leye Jin
-*  @version 2.0 27-11-2020
+*  @version 2.0 30-11-2020
 */
 #ifndef __VIEW__
 #define __VIEW__
@@ -55,26 +55,61 @@ class ConsoleView {
       *  Checks that the game has not ended.
       *  Returns true if game is still going, false if it has ended.
       *
-      *  @return True if game is still going, false if it has ended.
+      *  @return true if game is still going, false if it has ended.
       */
       bool checkNotEndGame();
 
       /**
-      *  Removes the game board from the memory
+      *  Return user input in the main menu.
+      *
+      *  @return menuInput The user input.
+      */
+      string getMenuInput();
+
+      /**
+      *  Return the file name entered by the user.
+      *
+      *  @return fileName The file name.
+      */
+      string getFileName();
+
+      /**
+      *  Checks if user has entered 'cancel' during file name prompt.
+      *
+      *  @return true if the user entered 'cancel', false otherwise.
+      */
+      bool getFileSelectionCanceled();
+
+      /**
+      *  Removes the game board from the memory.
       */
       void removeGameBoard();
 
+      /**
+      *  Gets user input during game play.
+      *  Checks for invalid game board coordinates.
+      *  End the game if user enters 'exit' any time during game play.
+      */
       void play();
-      string getMenuInput();
-      string getFileName();
-      bool getFileSelectionCanceled();
-      void displayErrorMessage();
-      void processEndGame();
-      void displayThanks();
-      void setErrorMessage(string s);
 
       /**
-      *  Sets background and character colour
+      *  Displays an error message in the console.
+      */
+      void displayErrorMessage();
+
+      /**
+      *  Displays end game stats such as text, total score and total move count.
+      */
+      void processEndGame();
+
+
+      /**
+      *  Displays a "thanks for playing" message.
+      */
+      void displayThanks();
+
+      /**
+      *  Sets background and colour for the text that will follow.
       *
       *  Block colour list:
       *  151: BLUE
