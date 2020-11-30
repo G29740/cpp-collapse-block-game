@@ -1,9 +1,9 @@
 /**
    ConsoleView.cpp
-   Purpose: represents the interface between the user and the game board
+   Purpose: represents the interface between the user and the game board.
 
    @author Leye Jin
-   @version 2.0 27-11-2020
+   @version 2.0 30-11-2020
 */
 #include <iostream>
 #include <sstream>
@@ -55,7 +55,7 @@ void ConsoleView::process() {
 
 void ConsoleView::displayMainMenu() {
    cout << "+-----------------------------------------------------+" << endl;
-   cout << "|          C++ PROJECT: COLLAPSE BLOCKS GAME          |" << endl;
+   cout << "|           C++ PROJECT: COLLAPSE BLOCK GAME          |" << endl;
    cout << "|                                                     |" << endl;
    cout << "|                    ";
    txtC(151);
@@ -201,6 +201,7 @@ void ConsoleView::readMenuInput() {
    }
 
 }
+
 void ConsoleView::displayGameBoard() {
    cout << string(100, '\n');
    cout << "\n  +--";
@@ -258,12 +259,15 @@ void ConsoleView::displayGameBoard() {
 
    cout << endl << endl;
 }
+
 bool ConsoleView::checkNotEndGame() {
    return notEndGame;
 }
+
 string ConsoleView::getMenuInput() {
    return menuInput;
 }
+
 string ConsoleView::getFileName() {
    return fileName;
 }
@@ -271,9 +275,11 @@ string ConsoleView::getFileName() {
 bool ConsoleView::getFileSelectionCanceled() {
    return fileSelectionCanceled;
 }
+
 void ConsoleView::removeGameBoard() {
    delete board;
 }
+
 void ConsoleView::play() {
    rowInput = -1;
    columnInput = -1;
@@ -315,10 +321,10 @@ void ConsoleView::play() {
                notEndGame = (board -> getRemainingGroups() > 0);
                board -> resetNbBlocksRemoved();
                moveCount++;
-               setErrorMessage("");
+               errorMessage = "";
             } else {
                txtC(4);
-               setErrorMessage("\n** (X) Cannot perform action: colour group too small or cell is empty!");
+               errorMessage = "\n** (X) Cannot perform action: colour group too small or cell is empty!";
                txtC(7);
             }
             rowInput = -1;
@@ -354,7 +360,7 @@ void ConsoleView::processEndGame() {
    }
    cout << ">> Total score: " << score << " points" << endl;
    cout << "Press [ENTER] to return to the main menu" << endl;
-   getline(cin, errorMessage);
+   getline(cin, errorMessage); //simulates "press [ENTER] to continue"
 }
 
 void ConsoleView::displayThanks() {
@@ -363,10 +369,6 @@ void ConsoleView::displayThanks() {
    cout << "|  Thanks for playing!  |" << endl;
    cout << "+-----------------------+" << endl;
    cout << string(10, '\n');
-}
-
-void ConsoleView::setErrorMessage(string s) {
-   errorMessage = s;
 }
 
 void ConsoleView::txtC(int cl) {
