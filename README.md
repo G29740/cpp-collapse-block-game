@@ -6,7 +6,7 @@ Console version of a tile matching game inspired by Collapse! (GameHouse) writte
 This game is an improved version of an academic project developed in late 2007 that includes bug fixes, visual enhancements and improved gameplay mechanisms. The game runs on a console and requires user input for interactions. The board can be initialised using default settings, custom settings and files. The user must enter some commands in the console window in order to interact with the game board (mouse is not supported).
 
 ## Rules
-This puzzle video game, which is inspired by Collapse! from Gamehouse (https://en.wikipedia.org/wiki/Collapse!), involves matching groups of at least 2 blocks (or tiles) with the same colour to remove them from the board. The game ends when only "isolated" blocks are remaining on the board or when all blocks are removed.
+This puzzle video game, which is inspired by <a target="_blank" title="Collapse!" href="https://en.wikipedia.org/wiki/Collapse!">Collapse!</a> from Gamehouse, involves matching groups of at least 2 blocks (or tiles) with the same colour to remove them from the board. The game ends when only "isolated" blocks are remaining on the board or when all blocks are removed.
 
 ## Changes compared to the original academic version
 - New additions:
